@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>АкваМастер — сантехнические работы</title>
+  <title>АкваМастер — инженерная сантехника загородных домов</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="topbar">
     <div class="container nav">
       <a href="#top" class="logo">
-        <span class="logo-mark">🔧</span>
+        <span class="logo-mark">⬢</span>
         <span>АкваМастер</span>
       </a>
 
       <nav class="nav-links" id="mobileMenu">
-        <a href="#services">Услуги</a>
-        <a href="#process">Этапы работ</a>
-        <a href="#works">Примеры объектов</a>
+        <a href="#services">Направления</a>
+        <a href="#works">Объекты</a>
+        <a href="#process">Этапы</a>
         <a href="#contacts">Заявка</a>
         <a class="nav-phone" href="tel:89259580212">8 925 958-02-12</a>
       </nav>
@@ -38,103 +38,164 @@
   </header>
 
   <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="reveal">
-          <h1 class="hero-title">Сантехнические работы под ключ для квартир, домов и крупных производственных объектов</h1>
-          <p class="hero-text">
-            Выполняем сантехнические работы на объектах разного масштаба: от квартир и частных домов
-            до производственных и коммерческих площадок. Берём в работу полный цикл: обследование,
-            расчёт, прокладку труб, монтаж узлов водоснабжения и канализации, установку оборудования,
-            подключение сантехники и сдачу готовой системы.
-          </p>
+    <section class="hero hero-video">
+      <video
+        class="hero-bg-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="images/hero-poster.jpg"
+      >
+        <source src="videos/hero-house-engineering.mp4" type="video/mp4" />
+        Ваш браузер не поддерживает видео.
+      </video>
 
-          <div class="hero-actions">
-            <a class="button button-primary" href="#contacts">Оставить заявку</a>
-            <a class="button button-secondary" href="tel:89259580212">Позвонить</a>
-          </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-grid"></div>
 
-          <div class="hero-points">
-            <div class="point">
-              <strong>Крупные объекты</strong>
-              <span>Производственные, коммерческие и технические помещения с большим объёмом работ</span>
-            </div>
-            <div class="point">
-              <strong>Полный цикл</strong>
-              <span>От осмотра и расчёта до монтажа, проверки и сдачи объекта</span>
-            </div>
-            <div class="point">
-              <strong>Разный масштаб</strong>
-              <span>От отдельных помещений до объектов с несколькими зонами и точками подключения</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-visual reveal reveal-delay-1">
-          <div class="hero-card-large">
-            <img
-              class="visual-image"
-              src="https://images.pexels.com/photos/6585751/pexels-photo-6585751.jpeg"
-              alt="Готовый объект после монтажа сантехники"
-            />
-          </div>
-
-          <div class="hero-card-small">
-            <img
-              class="mini-image"
-              src="https://images.pexels.com/photos/271743/pexels-photo-271743.jpeg"
-              alt="Подключение сантехнического оборудования"
-            />
-            <strong>Отдельные участки работ</strong>
-            <p class="hero-note">
-              Подключение оборудования, замена узлов, монтаж сантехнических точек и отдельных линий.
-            </p>
-          </div>
-
-          <div class="hero-badge">
-            <strong>Комплексные объекты</strong>
-            <p class="hero-note">
-              Выполняем монтаж систем и сантехнических узлов на объектах с большим объёмом работ.
-            </p>
-          </div>
+      <div class="container hero-content">
+        <div class="hero-actions">
+          <a class="button button-hero button-hero-secondary" href="tel:89259580212">Позвонить</a>
+          <a class="button button-hero button-hero-primary" href="#contacts">Обсудить объект</a>
         </div>
       </div>
     </section>
 
     <section class="section" id="services">
       <div class="container">
-        <h2 class="section-title reveal">Какие задачи выполняем</h2>
+        <div class="section-eyebrow reveal">Основные направления</div>
+        <h2 class="section-title reveal">Инженерные системы загородных домов</h2>
         <p class="section-text reveal reveal-delay-1">
-          Выполняем отдельные заявки, комплексные работы по квартирам и домам, а также монтаж
-          сантехнических систем на крупных объектах.
+          Выполняем проектирование и монтаж инженерной сантехники для частных и загородных домов:
+          от котельной и разводки до канализации, коллекторных узлов и автоматики.
         </p>
 
         <div class="services-grid">
-          <article class="card reveal">
-            <div class="service-icon">🚿</div>
-            <h3>Монтаж сантехники</h3>
+          <article class="card service-card reveal">
+            <div class="service-icon">◉</div>
+            <div class="service-meta">01</div>
+            <h3>Отопление</h3>
             <p>
-              Установка унитазов, инсталляций, раковин, смесителей, ванн, душевых систем,
-              полотенцесушителей и сопутствующего оборудования.
+              Котельные, радиаторные системы, тёплые полы, коллекторные узлы,
+              насосные группы, погодозависимое управление и балансировка системы.
             </p>
           </article>
 
-          <article class="card reveal reveal-delay-1">
-            <div class="service-icon">🧱</div>
-            <h3>Разводка и замена труб</h3>
+          <article class="card service-card reveal reveal-delay-1">
+            <div class="service-icon">◌</div>
+            <div class="service-meta">02</div>
+            <h3>Водоснабжение</h3>
             <p>
-              Прокладка труб ХВС, ГВС и канализации, перенос точек, замена старых участков,
-              сборка узлов, монтаж арматуры, фильтров и соединений.
+              Ввод воды в дом, разводка ХВС и ГВС, системы фильтрации,
+              насосное оборудование, бойлеры, гидроаккумуляторы и узлы ввода.
             </p>
           </article>
 
-          <article class="card reveal reveal-delay-2">
-            <div class="service-icon">⚙️</div>
-            <h3>Подключение оборудования</h3>
+          <article class="card service-card reveal reveal-delay-2">
+            <div class="service-icon">◎</div>
+            <div class="service-meta">03</div>
+            <h3>Канализация</h3>
             <p>
-              Подключение стиральных и посудомоечных машин, бойлеров, фильтров воды,
-              сантехнического и технического оборудования.
+              Внутренняя и наружная канализация, стояки, фановые линии,
+              дренажные решения, подключение сантехнических точек и инженерных узлов.
             </p>
+          </article>
+
+          <article class="card service-card reveal reveal-delay-3">
+            <div class="service-icon">◈</div>
+            <div class="service-meta">04</div>
+            <h3>Автоматизация</h3>
+            <p>
+              Контроль температуры, управление насосами и контурами,
+              датчики протечки, исполнительные узлы и автоматизация инженерных процессов дома.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="works">
+      <div class="container">
+        <div class="section-eyebrow reveal">Примеры объектов</div>
+        <h2 class="section-title reveal">Реализованные работы: видео и фото</h2>
+        <p class="section-text reveal reveal-delay-1">
+          В этом блоке можно показывать реальные процессы монтажа, готовые инженерные узлы,
+          котельные, коллекторные группы, разводку по дому и финальный результат.
+        </p>
+
+        <div class="media-grid">
+          <article class="media-card media-card-large reveal">
+            <div class="media-frame media-video">
+              <video controls preload="metadata" poster="images/work-video-1-poster.jpg">
+                <source src="videos/work-1.mp4" type="video/mp4" />
+                Ваш браузер не поддерживает видео.
+              </video>
+            </div>
+            <div class="media-info">
+              <div class="media-type">Видео объекта</div>
+              <h3>Котельная и инженерный узел в загородном доме</h3>
+              <p>Показ монтажа, компоновки оборудования, коллекторного узла и разводки инженерных линий.</p>
+            </div>
+          </article>
+
+          <article class="media-card reveal reveal-delay-1">
+            <div class="media-frame">
+              <img src="images/work-1.jpg" alt="Котельная в загородном доме" loading="lazy" />
+            </div>
+            <div class="media-info">
+              <div class="media-type">Фото</div>
+              <h3>Собранная котельная</h3>
+              <p>Компактная и обслуживаемая компоновка оборудования.</p>
+            </div>
+          </article>
+
+          <article class="media-card reveal reveal-delay-2">
+            <div class="media-frame">
+              <img src="images/work-2.jpg" alt="Разводка отопления по дому" loading="lazy" />
+            </div>
+            <div class="media-info">
+              <div class="media-type">Фото</div>
+              <h3>Система отопления</h3>
+              <p>Разводка контуров отопления и инженерных линий по дому.</p>
+            </div>
+          </article>
+
+          <article class="media-card reveal">
+            <div class="media-frame media-video">
+              <video controls preload="metadata" poster="images/work-video-2-poster.jpg">
+                <source src="videos/work-2.mp4" type="video/mp4" />
+                Ваш браузер не поддерживает видео.
+              </video>
+            </div>
+            <div class="media-info">
+              <div class="media-type">Видео объекта</div>
+              <h3>Монтаж водоснабжения и канализации</h3>
+              <p>Реальный ход работ по инженерной сантехнике в частном доме.</p>
+            </div>
+          </article>
+
+          <article class="media-card reveal reveal-delay-1">
+            <div class="media-frame">
+              <img src="images/work-3.jpg" alt="Коллекторный шкаф и инженерные узлы" loading="lazy" />
+            </div>
+            <div class="media-info">
+              <div class="media-type">Фото</div>
+              <h3>Коллекторный шкаф</h3>
+              <p>Сборка распределительного узла с удобным доступом для обслуживания.</p>
+            </div>
+          </article>
+
+          <article class="media-card reveal reveal-delay-2">
+            <div class="media-frame">
+              <img src="images/work-4.jpg" alt="Инженерная сантехника в загородном доме" loading="lazy" />
+            </div>
+            <div class="media-info">
+              <div class="media-type">Фото</div>
+              <h3>Инженерная разводка</h3>
+              <p>Аккуратный монтаж инженерных трасс до чистовой отделки.</p>
+            </div>
           </article>
         </div>
       </div>
@@ -142,148 +203,111 @@
 
     <section class="section" id="process">
       <div class="container">
+        <div class="section-eyebrow reveal">Этапы реализации</div>
         <h2 class="section-title reveal">Как строится работа по объекту</h2>
         <p class="section-text reveal reveal-delay-1">
-          Порядок работы одинаковый для квартир, домов и крупных объектов. Это позволяет
-          заранее определить объём, материалы, сроки и этапность монтажа.
+          Порядок работ выстроен так, чтобы инженерная система получалась логичной,
+          обслуживаемой и готовой к стабильной работе после запуска.
         </p>
 
         <div class="advantages-grid process-grid">
           <div class="advantage reveal">
-            <strong>1. Приём заявки</strong>
-            <span>Уточняем тип объекта, состав работ, сроки, объём, проектные данные или фотографии.</span>
+            <strong>1. Анализ объекта</strong>
+            <span>Изучаем планировку дома, состав помещений, технические условия и задачи по инженерии.</span>
           </div>
           <div class="advantage reveal reveal-delay-1">
-            <strong>2. Осмотр и расчёт</strong>
-            <span>Определяем техническое решение, точки подключения, перечень материалов и стоимость работ.</span>
+            <strong>2. Подбор решения</strong>
+            <span>Определяем архитектуру системы: отопление, узлы водоснабжения, канализацию и автоматику.</span>
           </div>
           <div class="advantage reveal reveal-delay-2">
-            <strong>3. Подготовка</strong>
-            <span>Проводим демонтаж, разметку, подготавливаем трассы, зоны установки и места подключения.</span>
+            <strong>3. Проектирование и смета</strong>
+            <span>Формируем схему, перечень оборудования, материалы, состав узлов и объём монтажных работ.</span>
           </div>
           <div class="advantage reveal reveal-delay-3">
             <strong>4. Монтаж</strong>
-            <span>Прокладываем трубы, собираем узлы, устанавливаем сантехнику и подключаем оборудование.</span>
+            <span>Выполняем разводку, собираем котельную, инженерные шкафы, узлы и подключаем оборудование.</span>
           </div>
           <div class="advantage reveal">
-            <strong>5. Проверка</strong>
-            <span>Проверяем систему на герметичность, корректность подключения, работу сливов и подачу воды.</span>
+            <strong>5. Настройка и проверка</strong>
+            <span>Опрессовка, запуск, проверка герметичности, логики работы контуров и автоматики.</span>
           </div>
           <div class="advantage reveal reveal-delay-1">
             <strong>6. Сдача объекта</strong>
-            <span>Передаём выполненные работы, показываем результат и фиксируем готовность системы к эксплуатации.</span>
+            <span>Передаём готовую систему и показываем, как она работает в ежедневной эксплуатации.</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section contact-section" id="contacts">
       <div class="container">
-        <h2 class="section-title reveal">Основной профиль — крупные объекты и комплексные работы</h2>
-        <p class="section-text reveal reveal-delay-1">
-          Основной акцент — объекты с большим объёмом сантехнических работ. Также выполняем монтаж
-          и замену сантехники в квартирах и частных домах.
-        </p>
-
-        <div class="advantages-grid">
-          <div class="advantage reveal">
-            <strong>Производственные объекты</strong>
-            <span>Монтаж сантехнических систем, разводка труб, сборка узлов и подключение оборудования на крупных площадках.</span>
+        <div class="contact-layout">
+          <div class="contact-side reveal">
+            <div class="section-eyebrow">Связь по объекту</div>
+            <h2 class="section-title">Обсудим инженерную систему вашего дома</h2>
+            <p class="section-text">
+              Оставьте заявку: можно указать площадь дома, этап строительства,
+              что уже сделано и какие системы нужно реализовать.
+            </p>
           </div>
-          <div class="advantage reveal reveal-delay-1">
-            <strong>Коммерческие помещения</strong>
-            <span>Работы на объектах с несколькими санузлами, техническими зонами и большим количеством точек подключения.</span>
-          </div>
-          <div class="advantage reveal reveal-delay-2">
-            <strong>Квартиры и дома</strong>
-            <span>Полный монтаж сантехники, замена труб, подключение оборудования, работы по санузлам, кухням и ванным комнатам.</span>
-          </div>
-          <div class="advantage reveal reveal-delay-3">
-            <strong>Комплексный объём</strong>
-            <span>Выполняем работы по этапам на объектах, где требуется не одна точка, а полноценная система с несколькими линиями и узлами.</span>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="section" id="works">
-      <div class="container">
-        <h2 class="section-title reveal">Примеры выполненных работ</h2>
-        <p class="section-text reveal reveal-delay-1">
-          Работаем как с локальными задачами, так и с объектами, где требуется комплексный сантехнический монтаж.
-        </p>
+          <div class="contact-form-wrap reveal reveal-delay-1">
+            <div class="contact-card single-form-card">
+              <form id="contactForm">
+                <div class="field">
+                  <label for="name">Ваше имя</label>
+                  <input id="name" name="name" type="text" placeholder="Например, Александр" required />
+                </div>
 
-        <div class="gallery-grid">
-          <figure class="gallery-item reveal">
-            <img src="https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg" alt="Комплексный сантехнический объект" />
-            <figcaption class="gallery-caption">Комплексный монтаж сантехнической зоны</figcaption>
-          </figure>
+                <div class="field">
+                  <label for="phone">Телефон</label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="+7 (___) ___-__-__"
+                    inputmode="tel"
+                    maxlength="18"
+                    required
+                  />
+                </div>
 
-          <figure class="gallery-item reveal reveal-delay-1">
-            <img src="https://images.pexels.com/photos/6585761/pexels-photo-6585761.jpeg" alt="Установка раковины" />
-            <figcaption class="gallery-caption">Установка раковины и узлов подключения</figcaption>
-          </figure>
+                <div class="field">
+                  <label for="message">Кратко о задаче</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Например: загородный дом 240 м², нужно отопление, водоснабжение, канализация и автоматика котельной"
+                  ></textarea>
+                </div>
 
-          <figure class="gallery-item reveal reveal-delay-2">
-            <img src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg" alt="Подключение смесителя" />
-            <figcaption class="gallery-caption">Подключение сантехнической точки</figcaption>
-          </figure>
+                <div class="field">
+                  <label for="attachments">Изображения объекта</label>
 
-          <figure class="gallery-item reveal">
-            <img src="https://images.pexels.com/photos/7535030/pexels-photo-7535030.jpeg" alt="Сантехнические монтажные работы" />
-            <figcaption class="gallery-caption">Монтаж и замена участков системы</figcaption>
-          </figure>
+                  <div class="upload-dropzone" id="uploadDropzone">
+                    <input
+                      id="attachments"
+                      name="attachments"
+                      type="file"
+                      accept="image/*"
+                      multiple
+                      hidden
+                    />
+                    <div class="upload-dropzone-inner">
+                      <strong>Перетащите изображения сюда</strong>
+                      <span>или нажмите, чтобы выбрать файлы</span>
+                    </div>
+                  </div>
 
-          <figure class="gallery-item reveal reveal-delay-1">
-            <img src="https://images.pexels.com/photos/6474475/pexels-photo-6474475.jpeg" alt="Готовая сантехническая зона" />
-            <figcaption class="gallery-caption">Готовая сантехническая зона после монтажа</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
+                  <div class="upload-list" id="uploadList"></div>
+                </div>
 
-    <section class="section" id="contacts">
-      <div class="container">
-        <h2 class="section-title reveal">Оставить заявку</h2>
-        <p class="section-text reveal reveal-delay-1">
-          Укажите имя, телефон и краткое описание задачи. Можно указать тип объекта, объём работ и перечень оборудования.
-        </p>
-
-        <div class="contact-form-wrap reveal reveal-delay-2">
-          <div class="contact-card single-form-card">
-            <form id="contactForm">
-              <div class="field">
-                <label for="name">Ваше имя</label>
-                <input id="name" name="name" type="text" placeholder="Например, Александр" required />
-              </div>
-
-              <div class="field">
-                <label for="phone">Телефон</label>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  placeholder="+7 (___) ___-__-__"
-                  inputmode="tel"
-                  maxlength="18"
-                  required
-                />
-              </div>
-
-              <div class="field">
-                <label for="message">Что нужно сделать</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder="Например: квартира, дом или производственный объект; монтаж труб, установка сантехники, подключение оборудования"
-                ></textarea>
-              </div>
-
-              <div class="form-bottom">
-                <button class="button button-primary" type="submit">Отправить заявку</button>
-                <div class="form-message" id="formMessage" aria-live="polite"></div>
-              </div>
-            </form>
+                <div class="form-bottom">
+                  <button class="button button-primary" type="submit">Отправить заявку</button>
+                  <div class="form-message" id="formMessage" aria-live="polite"></div>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -292,12 +316,12 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <span>© 2026 АкваМастер. Монтаж и замена сантехники.</span>
+      <span>© 2026 АкваМастер. Проектирование и монтаж инженерной сантехники загородных домов.</span>
       <a href="tel:89259580212">8 925 958-02-12</a>
     </div>
   </footer>
 
-  <a href="tel:89259580212" class="floating-call" aria-label="Позвонить">📞</a>
+  <a href="tel:89259580212" class="floating-call" aria-label="Позвонить">✆</a>
 
   <script src="script.js"></script>
 </body>

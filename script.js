@@ -4,6 +4,12 @@ const phoneInput = document.getElementById("phone");
 const burgerButton = document.getElementById("burgerButton");
 const mobileMenu = document.getElementById("mobileMenu");
 const revealItems = document.querySelectorAll(".reveal");
+const counters = document.querySelectorAll("[data-counter]");
+const uploadInput = document.getElementById("attachments");
+const uploadDropzone = document.getElementById("uploadDropzone");
+const uploadList = document.getElementById("uploadList");
+
+let selectedFiles = [];
 
 function showToast(text) {
   const existingToast = document.querySelector(".toast");
@@ -26,6 +32,86 @@ function showToast(text) {
       toast.remove();
     }, 300);
   }, 2600);
+}
+
+function formatFileSize(bytes) {
+  if (bytes < 1024) return bytes + " Б";
+  if (bytes < 1024 * 1024) return Math.round(bytes / 1024) + " КБ";
+  return (bytes / (1024 * 1024)).toFixed(1) + " МБ";
+}
+
+function renderFileList() {
+  if (!uploadList) return;
+
+  uploadList.innerHTML = "";
+
+  selectedFiles.forEach(function (file) {
+    const item = document.createElement("div");
+    item.className = "upload-item";
+
+    const name = document.createElement("span");
+    name.textContent = file.name;
+
+    const size = document.createElement("small");
+    size.textContent = formatFileSize(file.size);
+
+    item.appendChild(name);
+    item.appendChild(size);
+    uploadList.appendChild(item);
+  });
+}
+
+function syncInputFiles(filesArray) {
+  if (!uploadInput || typeof DataTransfer === "undefined") return;
+
+  const dataTransfer = new DataTransfer();
+  filesArray.forEach(function (file) {
+    dataTransfer.items.add(file);
+  });
+  uploadInput.files = dataTransfer.files;
+}
+
+function addFiles(files) {
+  const imageFiles = Array.from(files).filter(function (file) {
+    return file.type.startsWith("image/");
+  });
+
+  if (!imageFiles.length) {
+    showToast("Можно загрузить только изображения");
+    return;
+  }
+
+  selectedFiles = selectedFiles.concat(imageFiles);
+  syncInputFiles(selectedFiles);
+  renderFileList();
+}
+
+if (uploadDropzone && uploadInput) {
+  uploadDropzone.addEventListener("click", function () {
+    uploadInput.click();
+  });
+
+  uploadInput.addEventListener("change", function () {
+    addFiles(uploadInput.files);
+  });
+
+  ["dragenter", "dragover"].forEach(function (eventName) {
+    uploadDropzone.addEventListener(eventName, function (event) {
+      event.preventDefault();
+      uploadDropzone.classList.add("is-dragover");
+    });
+  });
+
+  ["dragleave", "drop"].forEach(function (eventName) {
+    uploadDropzone.addEventListener(eventName, function (event) {
+      event.preventDefault();
+      uploadDropzone.classList.remove("is-dragover");
+    });
+  });
+
+  uploadDropzone.addEventListener("drop", function (event) {
+    addFiles(event.dataTransfer.files);
+  });
 }
 
 if (burgerButton && mobileMenu) {
@@ -104,19 +190,19 @@ if (form) {
 
     formMessage.textContent = "Отправляем заявку...";
 
-    const payload = {
-      name: name,
-      phone: phone,
-      message: message
-    };
-
     try {
+      const payload = new FormData();
+      payload.append("name", name);
+      payload.append("phone", phone);
+      payload.append("message", message);
+
+      selectedFiles.forEach(function (file) {
+        payload.append("attachments", file);
+      });
+
       const response = await fetch("/api/requests", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload)
+        body: payload
       });
 
       if (!response.ok) {
@@ -126,6 +212,8 @@ if (form) {
       formMessage.textContent = "Спасибо. Заявка отправлена.";
       showToast("Заявка успешно отправлена");
       form.reset();
+      selectedFiles = [];
+      renderFileList();
     } catch (error) {
       formMessage.textContent = "Не удалось отправить заявку. Попробуйте ещё раз.";
       showToast("Ошибка отправки заявки");
@@ -134,12 +222,48 @@ if (form) {
   });
 }
 
+function animateCounter(element) {
+  const targetText = element.getAttribute("data-counter") || "0";
+  const numericTarget = parseInt(targetText.replace(/\D/g, ""), 10);
+
+  if (!numericTarget) return;
+
+  let current = 0;
+  const duration = 1400;
+  const steps = 40;
+  const increment = Math.ceil(numericTarget / steps);
+  const stepTime = Math.max(16, Math.floor(duration / steps));
+
+  const timer = setInterval(function () {
+    current += increment;
+
+    if (current >= numericTarget) {
+      current = numericTarget;
+      clearInterval(timer);
+    }
+
+    element.textContent = current;
+  }, stepTime);
+}
+
 if (revealItems.length) {
   const observer = new IntersectionObserver(
     function (entries, obs) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add("is-visible");
+
+          const counter = entry.target.querySelector("[data-counter]");
+          if (counter && !counter.dataset.animated) {
+            counter.dataset.animated = "true";
+            animateCounter(counter);
+          }
+
+          if (entry.target.matches("[data-counter]") && !entry.target.dataset.animated) {
+            entry.target.dataset.animated = "true";
+            animateCounter(entry.target);
+          }
+
           obs.unobserve(entry.target);
         }
       });
@@ -151,6 +275,12 @@ if (revealItems.length) {
   );
 
   revealItems.forEach(function (item) {
-    observer.observe(item);
+    if (!item.classList.contains("is-visible")) {
+      observer.observe(item);
+    }
+  });
+
+  counters.forEach(function (counter) {
+    observer.observe(counter);
   });
 }
